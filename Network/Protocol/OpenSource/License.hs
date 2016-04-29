@@ -23,7 +23,7 @@ THE SOFTWARE
 
 {-# LANGUAGE TemplateHaskell #-}
 
-module License (
+module Network.Protocol.OpenSource.License (
     OSIIdentifier(..)
   , OSILink(..)
   , OSIOtherName(..)
