@@ -73,9 +73,9 @@ data OSILicense = OSILicense {
   , olName :: Text
   , olSuperseded_by :: Maybe Text
   , olKeywords :: [Text]
-  , olIdentifiers :: Maybe [OSIIdentifier]  -- BUG in API response?
+  , olIdentifiers :: [OSIIdentifier]
   , olLinks :: [OSILink]
-  , olOther_names :: Maybe [OSIOtherName]   -- BUG in API response?
+  , olOther_names :: [OSIOtherName]
   , olText :: [OSIText]
 } deriving (Eq, Read, Show)
 $(deriveJSON defaultOptions{fieldLabelModifier = (map toLower . drop 2), constructorTagModifier = map toLower} ''OSILicense)
