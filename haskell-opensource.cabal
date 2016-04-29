@@ -8,7 +8,7 @@ synopsis:            Haskell API Wrapper for the Open Source License API
 homepage:            https://api.opensource.org/
 license:             MIT
 license-file:        LICENSE
-author:              Clint Adams
+author:              Paul Tagliamonte
 maintainer:          paultag@opensource.org
 -- copyright:           
 category:            Data
