@@ -1,4 +1,4 @@
-ruby-opensourceapi
+haskell-opensourceapi
 ==================
 
 `haskell-opensource` is an API Wrapper that allows you to query the
