@@ -37,6 +37,7 @@ library
 test-suite tests
   type:       exitcode-stdio-1.0
   main-is:    tests/suite.hs
+  other-modules:   Network.Protocol.OpenSource.License
   ghc-options: -Wall
   build-depends:
         base                     >= 4.4 && <5
