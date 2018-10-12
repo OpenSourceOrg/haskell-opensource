@@ -1,5 +1,5 @@
 name:                opensource
-version:             0.1.0.0
+version:             0.1.1.0
 synopsis:            Haskell API Wrapper for the Open Source License API
 description:         The Open Source API contains metadata regarding OSI Approved Licenses, and crosswalks that help with using and integrating this information with external sources. This library is designed to interact with that API so that users can simply build applications that are license-aware.
 homepage:            https://api.opensource.org/
@@ -65,4 +65,4 @@ source-repository head
 source-repository this
   type:     git
   location: https://github.com/OpenSourceOrg/haskell-opensource.git
-  tag:      haskell-opensource/0.1.0.0
+  tag:      haskell-opensource/0.1.1.0
