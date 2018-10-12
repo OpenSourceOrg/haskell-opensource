@@ -40,7 +40,7 @@ import Data.Aeson (eitherDecode)
 import Data.Aeson.TH (defaultOptions, deriveJSON, Options(..))
 import Data.Char (toLower)
 import Data.Text (Text)
-import Network.HTTP.Client (httpLbs, newManager, parseUrl, responseBody)
+import Network.HTTP.Client (httpLbs, newManager, parseUrlThrow, responseBody)
 import Network.HTTP.Client.TLS (tlsManagerSettings)
 
 data OSIIdentifier = OSIIdentifier {
@@ -83,7 +83,7 @@ $(deriveJSON defaultOptions{fieldLabelModifier = (map toLower . drop 2), constru
 getLicenses :: String -> ExceptT String IO [OSILicense]
 getLicenses k = ExceptT $ do
   manager <- newManager tlsManagerSettings
-  request <- parseUrl $ "https://api.opensource.org/licenses/" ++ k
+  request <- parseUrlThrow $ "https://api.opensource.org/licenses/" ++ k
   response <- httpLbs request manager
 
   return . eitherDecode . responseBody $ response
@@ -97,7 +97,7 @@ licensesMatchingKeyword = getLicenses
 getLicense :: String -> ExceptT String IO OSILicense
 getLicense k = ExceptT $ do
   manager <- newManager tlsManagerSettings
-  request <- parseUrl $ "https://api.opensource.org/license/" ++ k
+  request <- parseUrlThrow $ "https://api.opensource.org/license/" ++ k
   response <- httpLbs request manager
 
   return . eitherDecode . responseBody $ response
